@@ -52,13 +52,23 @@ function buyWeapon() {
 }
 
 function update(location) {
-
-}
-// objects inside arrays
-const locations = [{name: "town square", 
-                    "button text": ["Go to store", "Go to cave", "Fight dragon"],
-                    "button functions":[goStore, goCave, fightDragon]}];
-                   
+   button1.innerText = location["button text"][0];
+   button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+   button1.onclick = goStore;
+   button2.onclick = goCave;
+   button3.onclick = fightDragon;
+   text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+ 
+ }
+ 
+ function goTown() {
+    update(locations[0]);
+ }
+ 
+ function goStore() {
+   
+ }
 
 
 // initialize buttons   
@@ -71,7 +81,9 @@ button3.onclick = fightDragon
 
 // Objects
 
-const cat = {name:"Whiskers",
-"Number of legs": 4}
+const cat = {
+    name: "Whiskers",
+    "Number of legs": 4
+}
 console.log(cat);
 console.log(cat["Number of legs"]);
